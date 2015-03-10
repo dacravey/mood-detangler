@@ -11,7 +11,8 @@ export default DS.Model.extend({
             activity: "eating",
             journal: "Here is a journal entry",
             sleep: "8 hours",
-            food: "pizza"
+            food: "pizza",
+            date: "Mon 3/3/15 07:35AM"
         },
         {
             id: 2,
@@ -19,7 +20,8 @@ export default DS.Model.extend({
             activity: "dancing",
             journal: "Here is a journal entry 2",
             sleep: "0 hours",
-            food: "shrooms"
+            food: "shrooms",
+            date: "Tue 3/4/15 03:00AM"
         },
         {
             id: 3,
@@ -27,7 +29,8 @@ export default DS.Model.extend({
             activity: "waiting for tea to cool",
             journal: "damn hot tea",
             sleep: "3 hours",
-            food: "none"
+            food: "none",
+            date: "Wed 3/4/15 09:05AM"
         }
     ]
 });
