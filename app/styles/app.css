@@ -1,5 +1,17 @@
-// this is where our css goes
+ /*this is where our css goes*/
 
 body {
   background: #bbb;
+}
+
+#one {
+  background: blue;
+}
+
+#two {
+  background: green;
+}
+
+#three {
+  background: purple
 }
