@@ -1,0 +1,22 @@
+<form>
+  <div class="form-inline">
+      <label for="mood">Mood #</label>
+      {{input value=mood id="mood" class="form-control"}}
+
+      <label for="activity">Activity #</label>
+      {{input value=activity id="activity" class="form-control"}}
+
+      <label for="sleep">Sleep:</label>
+      {{input value=sleep id="sleep" class="form-control"}}
+
+      <label for="food">Food:</label>
+      {{input value=food id="food" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label for="journal">Journal:</label>
+    {{textarea value=journal id="journal" rows="8" class="form-control" placeholder="List three good things you did today."}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'createEntry'}}>Save</button>
+</form>

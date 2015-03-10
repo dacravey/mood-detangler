@@ -21,7 +21,7 @@ export default Ember.ArrayController.extend({
     //         this.set('food', null);
     //
     //         // Save the new model
-    //         todo.save();
+    //         entry.save();
     //     }
     // }
 });

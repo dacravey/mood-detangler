@@ -1,5 +1,9 @@
  /*this is where our css goes*/
 
+[data-ember-action] {
+  cursor: pointer;
+}
+
 body {
   background: #bbb;
 }
