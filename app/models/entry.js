@@ -1,9 +1,15 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-    title: DS.attr('string'),
-    isCompleted: DS.attr('boolean')
-}).reopenClass({
+var Entry = DS.Model.extend({
+    mood: DS.attr('string'),
+    activity: DS.attr('string'),
+    journal: DS.attr('string'),
+    sleep: DS.attr('string'),
+    food: DS.attr('string'),
+    date: DS.attr('string')
+});
+
+Entry.reopenClass({
     FIXTURES: [
         {
             id: 1,
@@ -34,3 +40,5 @@ export default DS.Model.extend({
         }
     ]
 });
+
+export default Entry;

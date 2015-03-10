@@ -1,4 +1,19 @@
-{{input type="text" id="new-entry" placeholder="Add a new entry"
-value=newEntry action="createEntry"}}
+<!-- {{input type="text" id="new-entry" placeholder="Add a new entry"
+value=newEntry action="createEntry"}} -->
 
-{{outlet}}
+<!-- {{outlet}} -->
+
+<div class="col-md-12">
+  {{#each}}
+    <div class="col-md-4">
+      <div class="lot well">
+        <p>Mood: {{mood}}</p>
+        <p>Activity: {{activity}}</p>
+        <p>Journal: {{journal}}</p>
+        <p>Sleep: {{sleep}}</p>
+        <p>Food: {{food}}</p>
+        <p>Date: {{date}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>
