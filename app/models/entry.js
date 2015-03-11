@@ -9,7 +9,9 @@ var Entry = DS.Model.extend({
     date: DS.attr('string'),
     moodActivity: function() {
       var moodActivity = [];
-      return moodActivity.push(this.get('mood'), this.get('activity'));
+      moodActivity.push(this.get('mood'));
+      moodActivity.push(this.get('activity'));
+      return moodActivity;
     }.property('mood', 'activity')
 });
 

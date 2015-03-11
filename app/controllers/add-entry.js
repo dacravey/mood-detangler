@@ -22,6 +22,7 @@ export default Ember.Controller.extend({
 
             // Save the new model
             entry.save();
+            this.transitionToRoute('entries');
         }
     }
 });
