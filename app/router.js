@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('entries', {path: '/'});
   this.resource('add-entry');
+  this.resource('relations');
 });
 
 export default Router;

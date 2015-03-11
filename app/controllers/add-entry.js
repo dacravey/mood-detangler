@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     actions: {
         createEntry: function() {
-            // Create the new Todo model
+            // Create the new Entry model
             var entry = this.store.createRecord('entry', {
                 mood: this.get('mood'),
                 activity: this.get('activity'),
@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
                 date: new Date()
             });
 
-            // Clear the "New Todo" text field
+            // Clear the "New Entry" text field
             this.set('mood', null);
             this.set('activity', null);
             this.set('journal', null);

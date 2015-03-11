@@ -6,7 +6,11 @@ var Entry = DS.Model.extend({
     journal: DS.attr('string'),
     sleep: DS.attr('string'),
     food: DS.attr('string'),
-    date: DS.attr('string')
+    date: DS.attr('string'),
+    moodActivity: function() {
+      var moodActivity = [];
+      return moodActivity.push(this.get('mood'), this.get('activity'));
+    }.property('mood', 'activity')
 });
 
 Entry.reopenClass({
