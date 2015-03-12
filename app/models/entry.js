@@ -9,10 +9,7 @@ var Entry = DS.Model.extend({
     sleep: DS.attr('string'),
     sleepRank: DS.attr('number'),
     food: DS.attr('string'),
-<<<<<<< HEAD
     foodRank: DS.attr('number'),
-    date: DS.attr('string')
-=======
     date: DS.attr('string'),
     moodActivity: function() {
       var moodActivity = [];
@@ -20,7 +17,6 @@ var Entry = DS.Model.extend({
       moodActivity.push(this.get('activity'));
       return moodActivity;
     }.property('mood', 'activity')
->>>>>>> 3b837fef3731c74888d4e50c1024ad5191dde01f
 });
 
 Entry.reopenClass({
