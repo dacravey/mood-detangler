@@ -9,25 +9,27 @@ var Entry = DS.Model.extend({
     sleep: DS.attr('string'),
     sleepRank: DS.attr('number'),
     food: DS.attr('string'),
-<<<<<<< HEAD
     foodRank: DS.attr('number'),
-    date: DS.attr('string')
-=======
     date: DS.attr('string'),
     moodActivity: function() {
       var moodActivity = [];
       moodActivity.push(this.get('mood'));
       moodActivity.push(this.get('activity'));
       return moodActivity;
-    }.property('mood', 'activity')
->>>>>>> 3b837fef3731c74888d4e50c1024ad5191dde01f
+    }.property('mood', 'activity'),
+    activityMood: function() {
+      var activityMood = [];
+      activityMood.push(this.get('activity'));
+      activityMood.push(this.get('mood'));
+      return activityMood;
+    }.property('activity', 'mood')
 });
 
 Entry.reopenClass({
     FIXTURES: [
         {
             id: 1,
-            mood: "bloated",
+            mood: "happy",
             moodRank: 5,
             activity: "eating",
             journal: "Here is a journal entry",
@@ -65,13 +67,25 @@ Entry.reopenClass({
             id: 4,
             mood: "depressed",
             moodRank: 1,
-            activity: "driving home from work",
+            activity: "commuting",
             journal: "traffic jam.  i sucked at work today.  I think my boss hates me.",
             sleep: "3 hours",
             sleepRank: 2,
             food: "5 hour energy drink and a candy bar.",
             foodRank: 3,
             date: "Wed 3/4/15 7:15PM"
+         },
+         {
+            id: 5,
+            mood: "relieved",
+            moodRank: 8,
+            activity: "talking with my mom",
+            journal: "My mom's health is doing better! Chemo is working!!!",
+            sleep: "3 hours",
+            sleepRank: 3,
+            food: "Chicken salad with soup.",
+            foodRank: 9,
+            date: "Wed 3/4/15 8:45PM"
          },
          {
             id: 5,
@@ -101,7 +115,7 @@ Entry.reopenClass({
             id: 7,
             mood: "mellow",
             moodRank: 8,
-            activity: "lunch break",
+            activity: "lunch",
             journal: "it's a beautiful day outside. I took a walk to the river and am sitting under a cherry tree.  Reminds me when i was a child without a care in the world.",
             sleep: "9 hours",
             sleepRank: 10,
@@ -193,11 +207,11 @@ Entry.reopenClass({
             foodRank: 7,
             date: "Wed 3/7/15 7:15AM"
           },
-           {
+          {
             id: 15,
             mood: "elated",
             moodRank: 9,
-            activity: "lunchtime",
+            activity: "lunch",
             journal: "Had an epiphany today.  I'm leaving this rat race behind and starting over. My boss is a jerk and so is my manager. I don't have to take this treatment anymore! YAH!",
             sleep: "8 hours",
             sleepRank: 8,
@@ -216,6 +230,66 @@ Entry.reopenClass({
             food: "Steak salad",
             foodRank: 8,
             date: "Wed 3/7/15 8:14PM"
+          },
+          {
+            id: 17,
+            mood: "elated",
+            moodRank: 9,
+            activity: "lunch",
+            journal: "Had an epiphany today.  I'm leaving this rat race behind and starting over. My boss is a jerk and so is my manager. I don't have to take this treatment anymore! YAH!",
+            sleep: "8 hours",
+            sleepRank: 8,
+            food: "pad thai",
+            foodRank: 7,
+            date: "Wed 3/7/15 3:00PM"
+          },
+          {
+            id: 18,
+            mood: "elated",
+            moodRank: 9,
+            activity: "lunch",
+            journal: "Had an epiphany today.  I'm leaving this rat race behind and starting over. My boss is a jerk and so is my manager. I don't have to take this treatment anymore! YAH!",
+            sleep: "8 hours",
+            sleepRank: 8,
+            food: "pad thai",
+            foodRank: 7,
+            date: "Wed 3/7/15 3:00PM"
+          },
+          {
+            id: 19,
+            mood: "annoyed",
+            moodRank: 5,
+            activity: "commuting",
+            journal: "Just had it out with my boss.  I hate this job. They have no idea what I do, so don't give me any credit, ever.",
+            sleep: "5 hours",
+            sleepRank: 5,
+            food: "what food?",
+            foodRank: 2,
+            date: "Wed 3/6/15 6:15PM"
+          },
+          {
+            id: 20,
+            mood: "annoyed",
+            moodRank: 5,
+            activity: "commuting",
+            journal: "Just had it out with my boss.  I hate this job. They have no idea what I do, so don't give me any credit, ever.",
+            sleep: "5 hours",
+            sleepRank: 5,
+            food: "what food?",
+            foodRank: 2,
+            date: "Wed 3/6/15 6:15PM"
+          },
+          {
+            id: 21,
+            mood: "annoyed",
+            moodRank: 5,
+            activity: "working",
+            journal: "Just had it out with my boss.  I hate this job. They have no idea what I do, so don't give me any credit, ever.",
+            sleep: "5 hours",
+            sleepRank: 5,
+            food: "what food?",
+            foodRank: 2,
+            date: "Wed 3/6/15 6:15PM"
           }
     ]
 });

@@ -1,68 +1,65 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-// Relationship between Moods and Activities.
 
   moodsActivities: function() {
-      // Need to bring in data from entries model.
     var entries = this.get('model');
-      // Need to add those key:value pairs into a custom array (var moodsActivities)
     return entries.map(function(entry) {
       return entry.get('moodActivity');
     });
   }.property(),
 
+  activitiesMoods: function() {
+    var entries = this.get('model');
+    return entries.map(function(entry) {
+      return entry.get('activityMood');
+    });
+  }.property(),
+
   actions: {
 
-    pullData: function() {
-  // Need to have logic that scans the array for duplicate entries
-    // ie: [ [mood1, activity1], [mood1, activity1] ] = 2 entries for [mood1, activity1]
-      console.log(this.get('moodsActivities'));
-      console.log(this.get('moodsActivities')[0]);
-      console.log(this.get('model'));
+    commonMoodActivityPairs: function() {
+      var moodsActivities = this.get('moodsActivities');
+      var activitiesMoods = this.get('activitiesMoods');
+      // var sortedActivitiesMoods = activitiesMoods.sort();
+      // var sortedMoodsActivities = moodsActivities.sort();
+      var len = moodsActivities.length;
+
+      var countedPairsMA = {};
+      for(var i = 0; i < len; i++) {
+        countedPairsMA[moodsActivities[i]] = ((countedPairsMA[moodsActivities[i]] || 0) + 1);
+      }
+      console.log(countedPairsMA);
+
+
+
+      var countedPairsAM = {};
+      for(var i = 0; i < len; i++) {
+        countedPairsAM[activitiesMoods[i]] = ((countedPairsAM[activitiesMoods[i]] || 0) + 1);
+      }
+      console.log(countedPairsAM);
+
+      // var dupePairsMA = [];
+      // for (i = 0; i < len - 1; i++) {
+      //     if (sortedMoodsActivities[i + 1][0] === sortedMoodsActivities[i][0]) {
+      //       dupePairsMA.push(sortedMoodsActivities[i]);
+      //     }
+      // }
+      // console.log(dupePairsMA);
+      //
+      // var uniquePairsMA = [];
+      // for(i = 0; i < len;) {
+      //   for(var k = i; k < len && ((sortedMoodsActivities[k][0] === sortedMoodsActivities[i][0]) && (sortedMoodsActivities[k][1] === sortedMoodsActivities[i][1])); k++) {}
+      //   if(k === i + 1) {
+      //     uniquePairsMA.push(sortedMoodsActivities[i]);
+      //   }
+      //   i = k;
+      // }
+      // console.log(uniquePairsMA);
+
     }
 
-  // Need to have logic that scans the array for frequency of individual moods and activities.
+
   }
 
 });
-
-
-
-
-
-// lol
-
-
-// var entries = this.get('model'); // ? Is this getting the whole model?
-
-// var entryActivities = this.get('Detangler.Entry.activity');
-// var moodsActivities = [];
-    // -- Have experimented with:
-      // Detangler.Entry.mood,
-      // app.Entry.mood,
-      // app.Model.Entry.mood,
-      // app.Entry.mood,
-      // Entry.mood
-
-// var moodString = "";
-// var activityString = "";
-// var singleMoodActivity = [];
-
-// entryMoods.forEach(function(mood) {
-//   moodString += mood;
-// });
-//
-// entryActivities.forEach(function(activity) {
-//   activityString += activity;
-// });
-//
-// singleMoodActivity.push(moodString, activityString);
-
-
-// moodsActivities.push(singleMoodActivity);
-
-// entries.forEach(function(entry) {
-//   debugger;
-//   moodsActivities.push(entry.get('moodActivity'));
-// });
