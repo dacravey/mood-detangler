@@ -5,14 +5,14 @@ value=newEntry action="createEntry"}} -->
 
 <div class="col-md-12">
   {{#each}}
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="lot well">
-        <p>Mood: {{mood}}</p>
-        <p>Activity: {{activity}}</p>
-        <p>Journal: {{journal}}</p>
-        <p>Sleep: {{sleep}}</p>
-        <p>Food: {{food}}</p>
-        <p>Date: {{date}}</p>
+        <p><b>Date:</b> {{date}}</p>
+        <p><b>Mood:</b> {{mood}} <b>({{moodRank}})</b></p>
+        <p><b>Activity:</b> {{activity}} <b>({{activityRank}})</b></p>
+        <p><b>Sleep:</b> {{sleep}} <b>({{sleepRank}})</b></p>
+        <p><b>Food:</b> {{food}} <b>({{foodRank}})</b></p>
+        <p><b>Journal:</b> {{journal}}</p>
       </div>
     </div>
   {{/each}}
