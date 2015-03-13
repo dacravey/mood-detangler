@@ -1,22 +1,95 @@
 <form>
-  <div class="form-inline">
-      <label for="mood">Mood #</label>
-      {{input value=mood id="mood" class="form-control"}}
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group well">
+        <label for="mood">Mood</label>
+        {{input value=mood id="mood" class="form-control"}}
 
-      <label for="activity">Activity #</label>
-      {{input value=activity id="activity" class="form-control"}}
+        <label for="moodRank">Rank</label>
+        {{input value=moodRank id="moodRank" class="form-control"}}
+      </div>
 
-      <label for="sleep">Sleep:</label>
-      {{input value=sleep id="sleep" class="form-control"}}
+      <div class="form-group well">
+        <label for="activity">Activity</label>
+        {{input value=activity id="activity" class="form-control"}}
 
-      <label for="food">Food:</label>
-      {{input value=food id="food" class="form-control"}}
+        <label for="activityRank">Rank</label>
+        {{input value=activityRank id="activityRank" class="form-control"}}
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div class="form-group well">
+        <label for="sleep">Sleep</label>
+        {{input value=sleep id="sleep" class="form-control"}}
+
+        <label for="sleepRank">Rank</label>
+        {{input value=sleepRank id="sleepRank" class="form-control"}}
+      </div>
+
+      <div class="form-group well">
+        <label for="food">Food</label>
+        {{input value=food id="food" class="form-control"}}
+
+        <label for="foodRank">Rank</label>
+        {{input value=foodRank id="foodRank" class="form-control"}}
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group well">
+        <label for="journal">Journal:</label>
+        {{textarea value=journal id="journal" rows="8" class="form-control" placeholder="Need inspiration? List three good things you did today."}}
+      </div>
+    </div>
   </div>
+  <div class="col-md-12 centered">
+    <p><button class="btn btn-warning" {{action 'createEntry'}}>Save</button></p>
+  </div>
+</form>
 
+
+
+
+
+
+
+<!-- <form>
+  <div class="form-inline">
+    <label for="mood">Mood</label>
+    {{input value=mood id="mood" class="form-control"}}
+
+    <label for="moodRank">Mood Rank</label>
+    {{input value=moodRank id="moodRank" class="form-control"}}
+  </div>
+  <p></p>
+  <div class="form-inline">
+    <label for="sleep">Sleep</label>
+    {{input value=sleep id="sleep" class="form-control"}}
+
+    <label for="sleepRank">Sleep Rank</label>
+    {{input value=sleepRank id="sleepRank" class="form-control"}}
+  </div>
+  <p></p>
+  <div class="form-inline">
+    <label for="food">Food</label>
+    {{input value=food id="food" class="form-control"}}
+
+    <label for="foodRank">Food Rank</label>
+    {{input value=foodRank id="foodRank" class="form-control"}}
+  </div>
+  <p></p>
+  <div class="form-inline">
+    <label for="activity">Activity</label>
+    {{input value=activity id="activity" class="form-control"}}
+
+    <label for="activityRank">Activity Rank</label>
+    {{input value=activityRank id="activityRank" class="form-control"}}
+  </div>
+  <p></p>
   <div class="form-group">
     <label for="journal">Journal:</label>
-    {{textarea value=journal id="journal" rows="8" class="form-control" placeholder="List three good things you did today."}}
+    {{textarea value=journal id="journal" rows="8" class="form-control" placeholder="Need inspiration? List three good things you did today."}}
   </div>
 
   <button class="btn btn-primary" {{action 'createEntry'}}>Save</button>
-</form>
+</form> -->
